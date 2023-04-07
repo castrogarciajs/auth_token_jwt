@@ -9,6 +9,7 @@ const morgan = Morgan("dev");
 App.set("package", pkg);
 
 App.use(morgan);
+App.use(Express.json());
 
 App.get("/", (req, res) => {
   res.json({
