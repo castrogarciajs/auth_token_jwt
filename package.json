@@ -1,7 +1,7 @@
 {
   "name": "auth_token_api",
   "version": "1.0.0",
-  "description": "",
+  "description": "Api de Seguridad",
   "main": "index.js",
   "scripts": {
     "build": "babel src --out-dir dist",
@@ -9,7 +9,7 @@
     "start": "node ./dist/index.js"
   },
   "keywords": [],
-  "author": "",
+  "author": "Sebastian",
   "license": "ISC",
   "dependencies": {
     "bcrypt": "^5.1.0",
