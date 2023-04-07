@@ -2,7 +2,7 @@ import Product from "../models/Product";
 
 export async function get_product(req, res) {
   const products = await Product.find();
-  
+
   res.status(200).json(products);
 }
 
@@ -23,6 +23,9 @@ export function delete_product(req, res) {
   res.send("Eliminando product");
 }
 
-export function get_product_id(req, res) {
-  res.send("obteniendo un solo producto");
+export async function get_product_id(req, res) {
+  const id = req.params.id;
+  const product = await Product.findById(id);
+
+  res.status(200).send(product);
 }
