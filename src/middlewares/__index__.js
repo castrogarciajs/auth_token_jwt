@@ -1,3 +1,3 @@
-import { verify_token } from "./__token__";
+import * as token from "./__token__";
 
-export { verify_token };
+export { token };
