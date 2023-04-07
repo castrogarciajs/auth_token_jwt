@@ -1,6 +1,7 @@
 import Express from "express";
 import Morgan from "morgan";
 import pkg from "../package.json";
+import { __Auth__ } from "./routes/__Auth__.js";
 import { __Product__ } from "./routes/__Product__.js";
 
 const App = Express();
@@ -21,6 +22,7 @@ App.get("/", (req, res) => {
   });
 });
 
+App.use("/auth/", __Auth__);
 App.use("/api/", __Product__);
 
 export default App;
