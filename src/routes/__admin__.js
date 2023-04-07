@@ -6,7 +6,12 @@ const __admin__ = Router();
 
 __admin__.post(
   "/user",
-  [token.verify_token, token.is_admin, verify.checkout_roles],
+  [
+    token.verify_token,
+    token.is_admin,
+    verify.checkout_roles,
+    verify.checkout_user,
+  ],
   controller_admin.create_user
 );
 

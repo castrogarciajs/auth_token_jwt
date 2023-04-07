@@ -1,4 +1,18 @@
 import { ROLES } from "../models/Role.js";
+import Username from "../models/Username.js";
+
+export async function checkout_user(req, res, next) {
+  const username = await Username.findOne({ username: req.body.username });
+
+  if (username)
+    return res.status(400).json({ message: "El usuario ya existe" });
+
+  const email = await Username.findOne({ username: req.body.email });
+
+  if (email) return res.status(400).json({ message: "El email ya existe" });
+
+  next();
+}
 
 export function checkout_roles(req, res, next) {
   if (req.body.roles) {
