@@ -2,6 +2,7 @@ import Express from "express";
 import Morgan from "morgan";
 import pkg from "../package.json";
 import { roles } from "./lib/__init__.js";
+import { __admin__ } from "./routes/__admin__.js";
 import { __Auth__ } from "./routes/__Auth__.js";
 import { __Product__ } from "./routes/__Product__.js";
 
@@ -27,5 +28,6 @@ App.get("/", (req, res) => {
 
 App.use("/auth/", __Auth__);
 App.use("/api/", __Product__);
+App.use("/admin/", __admin__);
 
 export default App;
