@@ -30,4 +30,5 @@ App.use("/auth/", __Auth__);
 App.use("/api/", __Product__);
 App.use("/admin/", __admin__);
 
+
 export default App;
