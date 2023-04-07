@@ -1,7 +1,9 @@
 import Product from "../models/Product";
 
 export async function get_product(req, res) {
-  res.send("obteniendo product");
+  const products = await Product.find();
+  
+  res.status(200).json(products);
 }
 
 export async function create_product(req, res) {
