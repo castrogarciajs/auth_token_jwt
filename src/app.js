@@ -1,11 +1,14 @@
 import Express from "express";
 import Morgan from "morgan";
 import pkg from "../package.json";
+import { roles } from "./lib/__init__.js";
 import { __Auth__ } from "./routes/__Auth__.js";
 import { __Product__ } from "./routes/__Product__.js";
 
 const App = Express();
 const morgan = Morgan("dev");
+
+roles();
 
 App.set("package", pkg);
 
