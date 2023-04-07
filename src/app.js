@@ -1,7 +1,7 @@
 import Express from "express";
 import Morgan from "morgan";
 import pkg from "../package.json";
-import { __router__ } from "./routes/Routes.js";
+import { __Product__ } from "./routes/__Product__.js";
 
 const App = Express();
 const morgan = Morgan("dev");
@@ -21,6 +21,6 @@ App.get("/", (req, res) => {
   });
 });
 
-App.use("/api/", __router__);
+App.use("/api/", __Product__);
 
 export default App;
